@@ -4,7 +4,7 @@
  -->
 <p><%= link_to "Create a new portfolio",new_portfolio_url %></p>
 <% @portfolio_items.each do |p| %>
-  <p><%= link_to p.title, portfolio_url(p) %></p>
+  <p><%= link_to p.title, portfolio_show_path(p) %></p>
   <p><%= p.subtitle %></p>
   <p><%= p.body %></p>
   <%= image_tag p.thumb_image if !p.thumb_image.nil? %>
