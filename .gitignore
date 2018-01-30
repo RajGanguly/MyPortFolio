@@ -20,3 +20,5 @@
 
 # No secrets to show
 /config/secrets.yml
+
+.DS_Store
