@@ -33,4 +33,16 @@ end
 		thumb_image: "http://via.placeholder.com/350x150")
 end	
 
+
 puts "9 portfolios created"
+
+technologies = ["Ruby", "Rails", "Python", "Javascript"]
+
+technologies.each do |tech|
+	Portfolio.last.technologies.create!(name: tech)
+end	
+
+puts "3 technologies are created."
+
+
+
