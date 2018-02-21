@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'enter-my-portfolio', sign_out: 'bye-bye', sign_up: 'register'}
   get 'angular-items', to: 'portfolios#angular'
   get 'rails-items', to: 'portfolios#rails'
 
