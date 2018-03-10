@@ -18,7 +18,8 @@ class PortfoliosController < ApplicationController
 
 
 	def create
-		@portfolio = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+		@portfolio = Portfolio.new(portfolio_params)
+		# params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
 
 		respond_to do |format|
 		  if @portfolio.save
@@ -42,7 +43,7 @@ class PortfoliosController < ApplicationController
 	def update
 		@portfolio = Portfolio.find(params[:id])
 	    respond_to do |format|
-	      if @portfolio.update(params.require(:portfolio).permit(:title, :subtitle, :body))
+	      if @portfolio.update(portfolio_params)
 	        format.html { redirect_to portfolios_path, notice: 'Blog was successfully updated.' }
 	        format.json { render :show, status: :ok, location: @blog }
 	      else
@@ -60,5 +61,11 @@ class PortfoliosController < ApplicationController
 		end  
 
 	end
+
+	private
+
+	   def portfolio_params
+	   	params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+	   end
 
 end
