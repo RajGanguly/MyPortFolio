@@ -28,13 +28,6 @@
       <p>Thanks for visting <%= session[:q] %></p>
     <% end %>
 
-    <div>
-      <div><%= link_to "Home", root_path %></div>
-      <div><%= link_to "About", about_path %></div>
-      <div><%= link_to "Contact", contact_path %></div>
-      <div><%= link_to "Blogs", blogs_path %></div>
-      <div><%= link_to "Portfolios", portfolios_path %></div>
-    </div>
-
+    <%= render "shared/nav" %>
   </body>
 </html>
